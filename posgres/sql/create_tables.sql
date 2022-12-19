@@ -1,0 +1,6 @@
+CREATE DATABASE grafana;
+CREATE DATABASE ozonekong;
+CREATE DATABASE ozoneglobalkong;
+GRANT ALL PRIVILEGES ON DATABASE grafana TO postgres;
+GRANT ALL PRIVILEGES ON DATABASE ozonekong TO postgres;
+GRANT ALL PRIVILEGES ON DATABASE ozoneglobalkong TO postgres;
