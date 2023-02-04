@@ -1,11 +1,11 @@
-version: '3.8'
+version: "3.8"
 
 services:
-
   vault:
     build:
       context: ./vault
       dockerfile: Dockerfile
+    restart: always
     ports:
       - 8200:8200
     volumes:
@@ -26,6 +26,7 @@ services:
     build:
       context: ./consul
       dockerfile: Dockerfile
+    restart: always
     ports:
       - 8500:8500
     command: agent -server -bind 0.0.0.0 -client 0.0.0.0 -bootstrap-expect 1 -config-file=/consul/config/config.json
@@ -37,6 +38,7 @@ services:
     build:
       context: ./consul
       dockerfile: Dockerfile
+    restart: always
     command: agent -server -join consul -config-file=/consul/config/config.json
     volumes:
       - ./consul/config/consul-config.json:/consul/config/config.json
