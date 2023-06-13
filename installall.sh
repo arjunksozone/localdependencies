@@ -1,5 +1,5 @@
 #!bin/sh
-export COMPOSE_FILE=minio/docker-compose.yml:nats/docker-compose.yml:mongodb/docker-compose.yml
+export COMPOSE_FILE=redis/docker-compose.yml:minio/docker-compose.yml:nats/docker-compose.yml:mongodb/docker-compose.yml
 docker-compose up -d
 sh ./kong/kong.sh
 cd postgres
